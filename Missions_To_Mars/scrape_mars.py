@@ -142,6 +142,5 @@ image_url = "https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars"
 facts_url = "https://space-facts.com/mars/"
 hemisphere_url = "https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars"
 
-
+# Execute the scrape function
 final_dict = scrape()
-print(final_dict)
