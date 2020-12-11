@@ -48,8 +48,8 @@
     <!-- Display the Scraped data to the Page -->
     <div class = "contents">
         <div class = "container">
-            <div class = "row">
-                <div class = "col-8">
+            <div class = "row justify-content-start">
+                <div class = "col-6">
                     <h2>Latest Mars News:</h2>
                     <h3> {{ marsFinal.News_Title }} </h3>
                     <p> {{ marsFinal.News_Paragraph }} </p>
@@ -59,9 +59,11 @@
                     <table> {{ marsFinal.Mars_Facts | safe }} </table>
                 </div>
             </div>
-            <div class = "row">
-                <div class = "col-8">
+            <div class = "row justify-content-center">
+                <div class = "col">
                     <h2>Latest Mars Image:</h2>
+                </div>
+                <div class = "col">
                     <img src = "{{ marsFinal.Featured_Image }}">
                 </div>
             </div>
@@ -69,8 +71,10 @@
                 <div class = "col-6">
                     <h2>Mars Hemispheres:</h2>
                 </div>
+            </div>
+            <div class = "row justify-content-center">
                 {% for hemisphere in marsFinal.Hemisphere %}
-                <div class = "col-6">
+                <div class = "col-12">
                     <figure>
                         <img src = "{{ hemisphere.img_url }}">
                         <figcaption>
