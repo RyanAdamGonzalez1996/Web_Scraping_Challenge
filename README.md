@@ -12,7 +12,12 @@ Navigating through the repository, and understanding what each, folder/file is.
     - Contains the jupyter notebook files of the working code on scraping the data from the provided URLs
   ### scrape_mars.py
     - Contains the code from the notebook files that will return a single dictionary to be used in the new HTML page to show all of the scraped data. App.py will be importing         this file.
-
+  ### images folder
+    - Contains screenshots of the application.
+  ### templates folder
+    - Contains the index.html file that creates the website application
+    - Referenced in app.py
+    
 ## .gitignore
   - Doesn't provide any additional function, here to keep up with good practices.
   
