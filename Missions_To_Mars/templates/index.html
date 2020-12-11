@@ -46,7 +46,28 @@
     </div>    
 
     <!-- Display the Scraped data to the Page -->
-    <div class = ""
+    <div class = "contents">
+        <div class = "container">
+            <div class = "row">
+                <div class = "col-8">
+                    <h2>Latest Mars News:</h2>
+                    <h3> {{ marsFinal.News_Title }} </h3>
+                    <p> {{ marsFinal.News_Paragraph }} </p>
+                </div>
+                <div class = "col-4">
+                    <h2>Mars Facts:</h2>
+                    <table> {{ marsFinal.Mars_Facts | safe }} </table>
+                </div>
+            </div>
+            <div class = "row">
+                <div class = "col-8">
+                    <h2>Latest Mars Image:</h2>
+                    <img src = "{{ marsFinal.Featured_Image }}">
+                </div>
+            </div>
+        </div>
+    </div>
+    
 </body>
 
 </html>

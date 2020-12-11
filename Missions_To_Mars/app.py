@@ -23,7 +23,7 @@ mars = db.mars
 @app.route("/")
 def index():
     # Query the Mongo Database
-    marsFinal = mars.find()
+    marsFinal = mars.find_one()
     return render_template("index.html", marsFinal = marsFinal)
     
 

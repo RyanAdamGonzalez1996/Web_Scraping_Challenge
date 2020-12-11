@@ -134,8 +134,8 @@ def marsHemispheres():
 def scrape():
     # Call other functions
     news_dict = marsNews()
-    image_dict ={"Featured Image" : marsImages()}
-    facts_dict = {"Mars Facts" : marsFacts()}
+    image_dict ={"Featured_Image" : marsImages()}
+    facts_dict = {"Mars_Facts" : marsFacts()}
     hemisphere_dict = {"Hemisphere" : marsHemispheres()}
 
     # Convert all scraped data to a dictionary
