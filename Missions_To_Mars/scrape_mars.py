@@ -7,6 +7,12 @@ from webdriver_manager.chrome import ChromeDriverManager
 import pandas as pd
 import json
 
+# Store the URL of the websites we will be scraping
+news_url = "https://mars.nasa.gov/news/"
+image_url = "https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars"
+facts_url = "https://space-facts.com/mars/"
+hemisphere_url = "https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars"
+
 def marsNews():
 
     # Retrieve page with requests module
@@ -118,29 +124,22 @@ def marsHemispheres():
         except:
             print("Error")
 
-    return hemisphere_image_urls
-
     # Close the browser when done scraping
     browser.quit()
+    
+    return hemisphere_image_urls
+
+
 
 def scrape():
     # Call other functions
     news_dict = marsNews()
     image_dict ={"Featured Image" : marsImages()}
     facts_dict = {"Mars Facts" : marsFacts()}
-    hemisphere_dict = marsHemispheres()
+    hemisphere_dict = {"Hemisphere" : marsHemispheres()}
 
     # Convert all scraped data to a dictionary
-    final_dict = {json.dumps(news_dict), json.dumps(image_dict), json.dumps(facts_dict), json.dumps(hemisphere_dict)}
-
+    # final_dict = {json.dumps(news_dict), json.dumps(image_dict), json.dumps(facts_dict), json.dumps(hemisphere_dict)}
+    final_dict = {**news_dict, **image_dict, **facts_dict, **hemisphere_dict}
     # Return the final_dict
     return final_dict
-
-# Store the URL of the websites we will be scraping
-news_url = "https://mars.nasa.gov/news/"
-image_url = "https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars"
-facts_url = "https://space-facts.com/mars/"
-hemisphere_url = "https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars"
-
-# Execute the scrape function
-final_dict = scrape()
