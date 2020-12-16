@@ -1,6 +1,6 @@
 # Import necessary libraries
 from flask import Flask, render_template, jsonify, redirect
-import scrape_mars
+from scrape_mars import scrape
 from flask_pymongo import PyMongo
 import pymongo
 import os
@@ -28,8 +28,8 @@ def index():
     
 
 @app.route("/scrape")
-def scrape():
-    mars_data = scrape_mars.scrape()
+def finalScrape():
+    mars_data = scrape()
     mars.update(
         {},
         mars_data,
